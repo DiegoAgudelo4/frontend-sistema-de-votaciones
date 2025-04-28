@@ -1,0 +1,11 @@
+.candidate-card {
+  max-width: 300px;
+  margin: 16px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.candidate-avatar {
+  background-image: url('https://placeholder.pics/svg/50');
+  background-size: cover;
+}

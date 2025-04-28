@@ -1,0 +1,26 @@
+<!-- <div class="candidates-container">
+  <mat-card class="candidate-card" *ngFor="let candidate of candidates" [id]="candidate.id">
+    <mat-card-header>
+      <div mat-card-avatar class="candidate-avatar"></div>
+      <mat-card-title>{{ candidate.name }}</mat-card-title>
+      <mat-card-subtitle>Partido: {{ candidate.party }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://placeholder.pics/svg/150" alt="Foto de {{ candidate.name }}">
+    <mat-card-content>
+      <p>Id: {{ candidate.id }}</p>
+      <p>Votos: {{ candidate.votes }}</p>
+    </mat-card-content>
+  </mat-card>
+</div> -->
+
+<div class="cards-container">
+  @for (candidate of candidatesService.candidates(); track candidate.id) {
+      <div class="card" id={{candidate.id}}>
+          <img src="https://placeholder.pics/svg/150" alt="Foto de Juan Pérez" class="profile-img">
+          <p class="id">Id: {{candidate.id}}</p>
+          <p class="name">Nombre: {{candidate.name}}</p>
+          <p class="party">Partido: {{candidate.party}}</p>
+          <p class="votes">Votos: {{candidate.votes}}</p>
+      </div>
+  }
+</div>

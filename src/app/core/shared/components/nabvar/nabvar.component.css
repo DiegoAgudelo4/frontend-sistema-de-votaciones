@@ -1,0 +1,32 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+button {
+  color: white;
+  background-color: #13ccf4;
+  margin-inline: 10px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+button:hover {
+  color: white;
+  background-color: gray;
+
+}
+.nav-drop-menu-item{
+  width: 100%;
+  margin: 0;
+}

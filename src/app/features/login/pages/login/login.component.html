@@ -1,0 +1,29 @@
+<div class="login-container">
+  <h2>{{title}}</h2>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+    <mat-form-field class="full-width">
+      <mat-label>Correo electrónico</mat-label>
+      <input matInput type="email" formControlName="email" placeholder="Ingresa tu correo" required />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Contraseña</mat-label>
+      <input matInput type="password" formControlName="password" placeholder="Ingresa tu contraseña" required />
+    </mat-form-field>
+
+    <div class="remember-me">
+      <mat-checkbox formControlName="rememberMe">Recordarme</mat-checkbox>
+    </div>
+
+    <button type="submit" mat-raised-button color="primary" class="full-width">
+      Iniciar sesión
+    </button>
+
+    <div class="auth-options">
+      <button mat-button color="accent" type="button" (click)="onRegister()">
+        ¿No tienes cuenta? Regístrate
+      </button>
+    </div>
+  </form>
+</div>

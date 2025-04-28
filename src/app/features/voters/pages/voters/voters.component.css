@@ -1,0 +1,27 @@
+.voters-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .voters-table th,
+  .voters-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .voters-table th {
+    background-color: #6de0f1;
+    color: #fff;
+  }
+  
+  .voted {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .not-voted {
+    color: red;
+    font-weight: bold;
+  }
+  

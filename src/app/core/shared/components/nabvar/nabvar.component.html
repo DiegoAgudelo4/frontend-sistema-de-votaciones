@@ -1,0 +1,49 @@
+<mat-toolbar color="primary" class="navbar">
+  <span class="logo">Sistema de votaciones</span>
+
+  <span class="spacer"></span>
+  @if (!isAuthRoute()){
+  <button
+    routerLink="/"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    mat-button
+  >
+    Inicio
+  </button>
+  <button
+    routerLink="/voters"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    mat-button
+  >
+    Voters
+  </button>
+  <button
+    routerLink="/votes"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    mat-button
+  >
+    Votes
+  </button>
+  <button
+    routerLink="/candidates"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    mat-button
+  >
+    Candidates
+  </button>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <button class="nav-drop-menu-item" routerLink="/auth/login" mat-menu-item>
+      Cerrar sesión
+    </button>
+  </mat-menu>
+  }
+</mat-toolbar>

@@ -1,0 +1,24 @@
+<table class="voters-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Votó</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (voter of voterService.candidates(); track voter.id) {
+        <tr id={{voter.id}}>
+            <td>{{ voter.id }}</td>
+            <td>{{ voter.name }}</td>
+            <td>{{ voter.email }}</td>
+            <td>
+                <span [class.voted]="voter.has_voted" [class.not-voted]="!voter.has_voted">
+                    {{ voter.has_voted ? 'Sí' : 'No' }}
+                </span>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
