@@ -1,0 +1,43 @@
+/* Estilos del contenedor principal */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f7fc;
+  }
+  
+  /* Formulario */
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  /* Ancho completo para los campos */
+  .full-width {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  /* Opciones de "Recordarme" y el botón de "Registrarse" */
+  .remember-me {
+    margin-bottom: 16px;
+  }
+  
+  .auth-options {
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Estilo de los botones */
+  button {
+    margin-top: 10px;
+  }
+  

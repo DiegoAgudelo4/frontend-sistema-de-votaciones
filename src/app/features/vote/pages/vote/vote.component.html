@@ -1,0 +1,19 @@
+<div class="login-container">
+    <h2>Crea tu voto</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+        <mat-form-field class="full-width">
+            <mat-label>Id del votante</mat-label>
+            <input matInput type="number" formControlName="voter_id" placeholder="ingresa id del votante" required />
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Id del candidato</mat-label>
+            <input matInput type="number" formControlName="candidate_id" placeholder="ingresa id del candidato" required />
+        </mat-form-field>
+
+        <button type="submit" mat-raised-button color="primary" class="full-width" >
+            Votar
+        </button>
+    </form>
+</div>

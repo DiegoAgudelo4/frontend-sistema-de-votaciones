@@ -1,16 +1,34 @@
-import { Component, computed, inject, Output } from '@angular/core';
+import { Component, computed, EventEmitter, inject, Output } from '@angular/core';
 import { Candidate } from '../../interfaces/candidato.interfaces';
 import { CandidatesService } from '../../services/candidates.service';
+import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-candidates',
-  imports: [],
+  imports: [
+    CommonModule
+  ],
   templateUrl: './candidates.component.html',
   styleUrl: './candidates.component.css'
 })
 export class CandidatesComponent {
-    public candidatesService = inject(CandidatesService);
+  @Output() cardClicked = new EventEmitter<number>();
+  cardSelected: number = 0;
+  public candidatesService = inject(CandidatesService);
+  public router=inject(Router);
 
-    // Accede a los candidatos como una signal computada
-    // @Output() candidate = this.candidatesService.candidates
+  isVoteRoute(): boolean{
+    if(this.router.url === '/'){
+      return false
+    }else{
+      return true
+    }
+  }
+
+  logCandidateId(id: number): void {
+    console.log('Card clickeada, ID:', id);
+    this.cardSelected=id;
+    this.cardClicked.emit(id);  
+  }
 }

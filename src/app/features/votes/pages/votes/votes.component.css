@@ -1,0 +1,28 @@
+/* votes.component.css */
+.votes-container {
+  margin: 20px;
+}
+
+.stat-card {
+  margin-bottom: 20px;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  height: 300px;
+}
+
+.statitics-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  padding: 16px;
+}
+
+.statitic-card {
+  width: 250px;
+  padding: 8px;
+}

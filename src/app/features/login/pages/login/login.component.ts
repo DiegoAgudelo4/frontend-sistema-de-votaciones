@@ -34,11 +34,19 @@ export class LoginComponent {
   loginForm: FormGroup;
 
   constructor() {
+    this.validateAuth();
     this.loginForm = this.fb.group({
-      email: [''],
-      password: [''],
+      email: ['admin@example.com'],
+      password: ['Clave_super_segura'],
       rememberMe: [false]
     });
+  }
+  private validateAuth() {
+    this.loginservice.isAuth();
+
+    if (this.loginservice.authenticated()) {
+      this.router.navigate(['/home']);
+    }
   }
 
   onSubmit() {
@@ -50,7 +58,7 @@ export class LoginComponent {
     this.loginservice.login(email, password).subscribe({
       next: (res) => {
         if (this.loginservice.authenticated()) {
-          this.router.navigate(['/']);
+          this.router.navigate(['/home']);
         }
       },
       error: (err) => {
@@ -68,5 +76,8 @@ export class LoginComponent {
     this.dialog.open(MessageComponent, {
       data: mensaje
     });
+  }
+  get isLoading() {
+    return this.loginservice.isLoading();
   }
 }

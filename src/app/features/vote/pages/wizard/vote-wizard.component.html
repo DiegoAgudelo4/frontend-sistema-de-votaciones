@@ -1,0 +1,47 @@
+<!-- vote-wizard.component.html -->
+<div class="title">
+    <h1>Vota conciente</h1>
+</div>
+
+<mat-horizontal-stepper linear [selectedIndex]="currentStep">
+    <!-- Paso 1: Email -->
+    <mat-step [stepControl]="emailForm" [editable]="false" [completed]="validEmail">
+        <div class="center">
+            <form [formGroup]="emailForm">
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" type="email" required>
+                    <mat-error *ngIf="emailForm.get('email')?.hasError('email')">Email inválido</mat-error>
+                </mat-form-field>
+                <div class="center">
+                    <button mat-raised-button color="primary" (click)="submitEmail()">Siguiente</button>
+                </div>
+            </form>
+        </div>
+    </mat-step>
+
+    <!-- Paso 2: Lista -->
+    <mat-step [editable]="false">
+        <div class="center">
+            <strong>Votante:</strong>
+            {{email}}
+
+        </div>
+        <app-candidates (cardClicked)="handleCardClick($event)"></app-candidates>
+        @if (this.selectedCandidate !=0) {
+        <div class="center">
+            <button mat-raised-button color="primary" (click)="vote()">Votar</button>
+        </div>
+        }
+    </mat-step>
+
+    <!-- Paso 3: Confirmación -->
+    <mat-step [editable]="false">
+        <div class="center">
+            <p>Gracias por votar, {{ email }}.</p>
+        </div>
+        <div class="center">
+            <button mat-raised-button (click)="reset()">Volver al inicio</button>
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>

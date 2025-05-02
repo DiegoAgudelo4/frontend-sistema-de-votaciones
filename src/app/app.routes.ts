@@ -7,6 +7,8 @@ import { CandidatesComponent } from './features/candidates/pages/candidates/cand
 import { VotersComponent } from './features/voters/pages/voters/voters.component';
 import { NotFoundComponent } from './core/shared/components/not-found/not-found.component';
 import { AuthGuard } from './features/login/services/auth.guard';
+import { VoteComponent } from './features/vote/pages/vote/vote.component';
+import { VoteWizardComponent } from './features/vote/pages/wizard/vote-wizard.component';
 
 export const routes: Routes = [
   {
@@ -29,7 +31,7 @@ export const routes: Routes = [
     ]
   },
   {
-    path:'',
+    path:'home',
     component: HomeComponent,
     canActivate: [AuthGuard]
   },
@@ -47,6 +49,10 @@ export const routes: Routes = [
     path:'candidates',
     component: CandidatesComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path:'',
+    component: VoteWizardComponent,
   },
   {
     path:'**',

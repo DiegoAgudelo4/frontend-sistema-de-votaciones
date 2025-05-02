@@ -16,7 +16,7 @@
       <mat-checkbox formControlName="rememberMe">Recordarme</mat-checkbox>
     </div>
 
-    <button type="submit" mat-raised-button color="primary" class="full-width">
+    <button type="submit" mat-raised-button color="primary" class="full-width" [disabled]="isLoading">
       Iniciar sesión
     </button>
 
