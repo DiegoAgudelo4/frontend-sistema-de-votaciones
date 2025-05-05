@@ -1,0 +1,14 @@
+section {
+    margin-inline: 10px;
+}
+
+
+section {
+    flex: 1;
+}
+
+app-navbar,
+app-footer {
+    display: block;
+    background-color: gray;
+}

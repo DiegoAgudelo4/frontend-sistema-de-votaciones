@@ -1,1 +1,21 @@
-<p>footer works!</p>
+<footer class="footer-container">
+    <div class="footer-content">
+        <div class="legal-info">
+            <p><strong>© 2025 VotoSeguro</strong> — Todos los derechos reservados.</p>
+            <p><a href="/terminos-condiciones" target="_blank">Términos y Condiciones</a> |
+                <a href="/politica-privacidad" target="_blank">Política de Privacidad</a>
+            </p>
+        </div>
+        <div>
+            Rutas de interés
+            <ul>
+                <li><a routerLink="/auth/login"> Admin Login</a></li>
+                <li><a routerLink="/"> Votar</a></li>
+            </ul>
+        </div>
+        <div class="clock">
+            <mat-icon>schedule</mat-icon>
+            <span>{{ currentTime }}</span>
+        </div>
+    </div>
+</footer>
